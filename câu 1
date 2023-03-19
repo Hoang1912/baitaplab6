@@ -1,0 +1,105 @@
+public class NhanVien {
+    public String ten;
+    public double luong;
+    public NhanVien(){
+        
+    }
+
+    public String getTen() {
+        return ten;
+    }
+
+    public void setTen(String ten) {
+        this.ten = ten;
+    }
+
+    public double getLuong() {
+        return luong;
+    }
+
+    public void setLuong(double luong) {
+        this.luong = luong;
+    }
+    
+    public NhanVien(String ten){
+        this.ten=ten;
+    }
+    public String loainhanvien(){
+        return "loainhanvien";
+    }
+    public void tinhluong(){
+        
+    }
+    public void xuatthongtin(){
+        
+    }
+}
+public class NhanVienFullTime extends NhanVien {
+    private int loaichucvu;
+    private int  ngaylamthem;
+    public NhanVienFullTime(){
+        
+    }
+    public NhanVienFullTime(String ten, int ngaylamthem, int loaichucvu){
+        super();
+    }
+    
+    public int getLoaichucvu() {
+        return loaichucvu;
+    }
+
+    public void setLoaichucvu(int loaichucvu) {
+        this.loaichucvu = loaichucvu;
+    }
+
+    public int getNgaylamthem() {
+        return ngaylamthem;
+    }
+
+    public void setNgaylamthem(int ngaylamthem) {
+        this.ngaylamthem = ngaylamthem;
+    }
+    
+    @Override
+    public String loainhanvien(){
+        return "NhanVienFullTime";
+    }
+    @Override
+    public void tinhluong(){
+        System.out.println("Luong nhan vien full time 41tr/thang");
+    }
+}
+public class NhanVienPartTime extends NhanVien {
+    private int giolamviec;
+    public NhanVienPartTime(){
+        
+    }
+     public NhanVienPartTime (String ten, int ngaylamthem, int loaichucvu){
+        super();
+    }
+
+    public int getGiolamviec() {
+        return giolamviec;
+    }
+
+    public void setGiolamviec(int giolamviec) {
+        this.giolamviec = giolamviec;
+    }
+     
+    @Override
+    public String loainhanvien(){
+        return "NhanVienPartTime";
+    }
+    @Override
+    public void tinhluong(){
+        System.out.println("Luong nhan vien part time 35ngan/gio.");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+     NhanVienFullTime ft=new NhanVienFullTime();
+     ft.tinhluong();
+     NhanVienPartTime pt=new NhanVienPartTime();
+     pt.tinhluong();
+    }
+}
